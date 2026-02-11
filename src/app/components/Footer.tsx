@@ -26,7 +26,9 @@ export function Footer() {
                 <Twitter className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/mabessa_pc_company?igsh=MXZ4MWJtZnM4ZTh5NQ=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 hover:bg-[#0066ff] rounded-lg flex items-center justify-center transition-colors"
               >
                 <Instagram className="w-4 h-4" />
@@ -94,11 +96,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Dar es Salaam, Tanzania</span>
+                <span>Magomeni Mapipa<br/>Dar es Salaam, Tanzania</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+255 XXX XXX XXX</span>
+                <span>+255 716 909 094</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />

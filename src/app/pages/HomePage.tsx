@@ -4,6 +4,7 @@ import { LaptopCard, Laptop as LaptopType } from "../components/LaptopCard";
 import { featuredLaptops, studentLaptops } from "../data/laptops";
 import { ScrollReveal, StaggerContainer, StaggerItem, staggerItemVariants } from "../components/ScrollAnimations";
 import { WhatsAppButton } from "../components/WhatsAppButton";
+import heroImage from "../../assets/homehero.png";
 
 interface HomePageProps {
   onNavigate: (page: string, data?: any) => void;
@@ -16,14 +17,26 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Apple/Microsoft Inspired */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[#E5F3FF] via-white to-[#F0F9FF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Hero Section - Full Image Background */}
+      <section className="relative min-h-[85vh] flex items-center justify-end overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Premium Laptop"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/50 to-black/30"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full z-10 flex justify-end">
+          <div className="max-w-2xl">
             {/* Hero Content */}
             <motion.div 
               className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
@@ -31,20 +44,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-sm"
               >
                 <div className="w-2 h-2 bg-[#10B981] rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-gray-700">Tanzania's Trusted Laptop Store</span>
+                <span className="text-sm font-semibold text-white">Tanzania's Trusted Laptop Store</span>
               </motion.div>
               
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-gray-900"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-white"
               >
                 Quality Laptops.
-                <span className="block mt-2 bg-gradient-to-r from-[#0078D4] to-[#50A8E8] bg-clip-text text-transparent">
+                <span className="block mt-2 text-[#50A8E8]">
                   Smart Prices.
                 </span>
               </motion.h1>
@@ -53,10 +66,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-xl text-gray-600 leading-relaxed max-w-xl"
+                className="text-xl text-gray-100 leading-relaxed max-w-xl"
               >
                 Built for students, professionals, and businesses across Tanzania. 
-                <span className="font-semibold text-gray-900"> Quality tested, warranty included, </span>
+                <span className="font-semibold text-white"> Quality tested, warranty included, </span>
                 delivered to your doorstep.
               </motion.p>
               
@@ -71,7 +84,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => onNavigate("student-packages")}
-                  className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-xl hover:border-[#0078D4] hover:bg-gray-50 transition-all font-semibold text-lg"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/20 text-white rounded-xl hover:bg-white/20 transition-all font-semibold text-lg"
                 >
                   Student Packages
                 </motion.button>
@@ -82,72 +95,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="flex items-center gap-8 pt-8 border-t border-gray-200"
+                className="flex items-center gap-8 pt-8 border-t border-white/20"
               >
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-[#10B981]" />
-                  <span className="text-sm font-medium text-gray-700">Quality Tested</span>
+                  <span className="text-sm font-medium text-white">Quality Tested</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#0078D4]" />
-                  <span className="text-sm font-medium text-gray-700">12 Months Warranty</span>
+                  <Shield className="w-5 h-5 text-[#50A8E8]" />
+                  <span className="text-sm font-medium text-white">12 Months Warranty</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Truck className="w-5 h-5 text-[#FF9500]" />
-                  <span className="text-sm font-medium text-gray-700">Fast Delivery</span>
+                  <span className="text-sm font-medium text-white">Fast Delivery</span>
                 </div>
               </motion.div>
-            </motion.div>
-
-            {/* Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&h=600&fit=crop"
-                  alt="Premium Laptop"
-                  className="rounded-3xl shadow-2xl"
-                />
-                
-                {/* Floating Stats Cards */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2 }}
-                  className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#0078D4] to-[#50A8E8] rounded-xl flex items-center justify-center">
-                      <Users className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gray-900">1000+</div>
-                      <div className="text-sm text-gray-600">Happy Customers</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.4 }}
-                  className="absolute -top-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#10B981] to-[#059669] rounded-xl flex items-center justify-center">
-                      <Award className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gray-900">100%</div>
-                      <div className="text-sm text-gray-600">Quality Tested</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -162,7 +124,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 icon: Shield,
                 title: "Quality Assured",
                 description: "Every laptop rigorously tested",
-                color: "from-[#10B981] to-[#059669]",
+                color: "from-[#0078D4] to-[#50A8E8]",
               },
               {
                 icon: Award,
@@ -174,13 +136,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 icon: Truck,
                 title: "Fast Delivery",
                 description: "Delivered across Tanzania",
-                color: "from-[#FF9500] to-[#D97706]",
+                color: "from-[#0078D4] to-[#50A8E8]",
               },
               {
                 icon: Package,
                 title: "Student Packages",
                 description: "Special bundles for students",
-                color: "from-[#7C3AED] to-[#5B21B6]",
+                color: "from-[#0078D4] to-[#50A8E8]",
               },
             ].map((feature, index) => (
               <StaggerItem

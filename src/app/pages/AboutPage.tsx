@@ -1,4 +1,5 @@
-import { Shield, Award, Users, Target, Heart, Zap } from "lucide-react";
+import { Shield, Award, Users, Target, Heart, Zap, Linkedin, Mail } from "lucide-react";
+import { motion } from "motion/react";
 
 interface AboutPageProps {
   onNavigate: (page: string, data?: any) => void;
@@ -75,6 +76,129 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               Tanzania. Our commitment to quality, transparency, and customer service has
               made us a trusted name in the technology market.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#E5F3FF] rounded-full mb-6"
+            >
+              <div className="w-2 h-2 bg-[#0078D4] rounded-full"></div>
+              <span className="text-sm font-semibold text-[#0078D4]">Meet Our Team</span>
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900"
+            >
+              Dedicated to Your Success
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
+            >
+              Our experienced team brings years of expertise in technology and customer service, 
+              committed to providing you with the best solutions for your computing needs.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Innocent Kija",
+                position: "CEO and Founder",
+                description: "Visionary leader with a passion for making technology accessible to everyone.",
+                icon: "👔",
+              },
+              {
+                name: "Joseph Kija",
+                position: "Shop Technical Officer",
+                description: "Technical expert ensuring every laptop meets our quality standards.",
+                icon: "🔧",
+              },
+              {
+                name: "Swalehe Suleiman",
+                position: "Sales Officer",
+                description: "Customer-focused professional dedicated to finding the perfect laptop for you.",
+                icon: "💼",
+              },
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ y: -10 }}
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0078D4]/5 to-[#50A8E8]/5"></div>
+                
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0078D4] to-[#50A8E8]"></div>
+
+                {/* Content */}
+                <div className="relative p-12 text-center">
+                  {/* Avatar */}
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-24 h-24 bg-gradient-to-br from-[#0078D4] to-[#50A8E8] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all"
+                  >
+                    <span className="text-5xl">{member.icon}</span>
+                  </motion.div>
+
+                  {/* Name */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {member.name}
+                  </h3>
+
+                  {/* Position */}
+                  <div className="inline-block mb-4">
+                    <span className="text-sm font-semibold text-[#0078D4] bg-[#E5F3FF] px-4 py-1.5 rounded-full">
+                      {member.position}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {member.description}
+                  </p>
+
+                  {/* Social Links */}
+                  <div className="flex items-center justify-center gap-4 pt-6 border-t border-gray-100">
+                    <motion.a
+                      href="#"
+                      whileHover={{ scale: 1.2, color: "#0078D4" }}
+                      className="p-2 bg-gray-100 rounded-full hover:bg-[#E5F3FF] transition-all"
+                    >
+                      <Mail className="w-5 h-5 text-gray-700" />
+                    </motion.a>
+                    <motion.a
+                      href="#"
+                      whileHover={{ scale: 1.2, color: "#0078D4" }}
+                      className="p-2 bg-gray-100 rounded-full hover:bg-[#E5F3FF] transition-all"
+                    >
+                      <Linkedin className="w-5 h-5 text-gray-700" />
+                    </motion.a>
+                  </div>
+                </div>
+
+                {/* Floating background element */}
+                <div className="absolute -right-16 -top-16 w-32 h-32 bg-gradient-to-br from-[#0078D4]/10 to-[#50A8E8]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

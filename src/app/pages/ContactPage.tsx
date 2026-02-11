@@ -91,10 +91,10 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               <h3 className="font-semibold text-lg mb-2">Phone</h3>
               <p className="text-gray-600 mb-2">Call us Monday to Saturday</p>
               <a
-                href="tel:+255XXXXXXXXX"
+                href="tel:+255716909094"
                 className="text-[#0066ff] hover:underline font-medium"
               >
-                +255 XXX XXX XXX
+                +255 716 909 094
               </a>
             </div>
 
@@ -105,7 +105,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               <h3 className="font-semibold text-lg mb-2">WhatsApp</h3>
               <p className="text-gray-600 mb-2">Chat with us instantly</p>
               <a
-                href="https://wa.me/255XXXXXXXXX"
+                href="https://wa.me/255716909094"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#25D366] hover:underline font-medium"
@@ -134,7 +134,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               </div>
               <h3 className="font-semibold text-lg mb-2">Location</h3>
               <p className="text-gray-600">
-                Dar es Salaam, Tanzania
+                Magomeni Mapipa<br/>Dar es Salaam, Tanzania
               </p>
             </div>
 
